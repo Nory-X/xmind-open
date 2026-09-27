@@ -1,0 +1,7 @@
+# Normalise line endings so the repository is identical on Windows, macOS and
+# Linux, and CI never sees a whole-file diff for a one-line change.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.zip binary

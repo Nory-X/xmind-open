@@ -1,0 +1,7 @@
+# Obsidian writes this at runtime (plugin settings). Not source.
+data.json
+
+# Scratch directory produced by tests/mutate.js
+tests/_mutants/
+
+node_modules/

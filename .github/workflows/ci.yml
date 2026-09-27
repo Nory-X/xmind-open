@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # jsdom is the only development dependency; the plugin itself ships none.
+      - name: Install dev dependency
+        run: npm install
+
+      - name: Syntax check
+        run: npm run check
+
+      - name: Unit and integration tests
+        run: npm test
+
+      # Proves the tests actually exercise the code: every mutant must be killed.
+      # A surviving mutant means the matching assertions are green by accident.
+      - name: Mutation tests
+        run: npm run test:mutation

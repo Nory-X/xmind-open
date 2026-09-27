@@ -1,0 +1,94 @@
+/* XMind Open — view shown when a .xmind file is opened.
+   It displays the map preview XMind stores inside the archive and offers a
+   hand-off to the system default application. Mindmap data is never parsed. */
+
+.xmind-open-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 100%;
+  padding: 32px;
+  text-align: center;
+}
+
+.xmind-open-view__icon {
+  color: var(--text-faint);
+}
+
+.xmind-open-view__icon svg {
+  width: 56px;
+  height: 56px;
+}
+
+.xmind-open-view__thumb {
+  max-width: min(560px, 82%);
+  max-height: 46vh;
+  object-fit: contain;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  background: var(--background-secondary);
+  cursor: pointer;
+}
+
+.xmind-open-view__thumb:hover {
+  border-color: var(--interactive-accent);
+}
+
+.xmind-open-view__name {
+  font-size: 1.15em;
+  font-weight: 600;
+  color: var(--text-normal);
+}
+
+.xmind-open-view__meta {
+  max-width: 40em;
+  font-size: var(--font-ui-smaller);
+  color: var(--text-muted);
+  word-break: break-all;
+}
+
+.xmind-open-view__button {
+  margin-top: 4px;
+}
+
+.xmind-open-view__status {
+  font-size: var(--font-ui-small);
+}
+
+.xmind-open-view__status.is-ok {
+  color: var(--text-success);
+}
+
+.xmind-open-view__status.is-error {
+  color: var(--text-error);
+}
+
+.xmind-open-view__hint {
+  max-width: 34em;
+  margin-top: 8px;
+  font-size: var(--font-ui-smaller);
+  color: var(--text-faint);
+}
+
+.xmind-open-setting-state {
+  margin-top: 12px;
+  font-size: var(--font-ui-small);
+  color: var(--text-muted);
+}
+
+.xmind-open-detect-result {
+  margin: -6px 0 12px;
+  font-size: var(--font-ui-smaller);
+  color: var(--text-muted);
+  word-break: break-all;
+}
+
+.xmind-open-detect-result.is-ok {
+  color: var(--text-success);
+}
+
+.xmind-open-detect-result.is-error {
+  color: var(--text-error);
+}
