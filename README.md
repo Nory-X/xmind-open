@@ -73,6 +73,21 @@ The plugin ships a small ZIP reader (locate the End Of Central Directory, walk t
 
 Everything degrades quietly. A missing preview entry, a corrupted archive, or an oversized image simply means *no picture this time* — the file still opens normally.
 
+## Permissions and system access
+
+To do its job the plugin touches a few things outside your vault. They are listed
+here rather than buried in the settings.
+
+| What | Why |
+|---|---|
+| Reads `Thumbnails/thumbnail.png` from the `.xmind` file you open | That is the preview image XMind itself stores. Nothing else inside the archive is read. |
+| Resolves the absolute path of that file | The operating system needs a real path before it can open anything. |
+| Launches the application associated with `.xmind` | This is the plugin's main action — opening your mindmap in XMind. |
+| **Optionally** launches one specific executable that you configure | Only if you fill in **XMind executable path**. Leave it empty and the plugin never runs anything you did not ask for. |
+
+It does not walk directories, does not read other files inside or outside your
+vault, and does not upload anything anywhere.
+
 ## Privacy
 
 - No network requests, ever.
