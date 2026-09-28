@@ -1,9 +1,11 @@
 name: CI
 
+# No branch filter on purpose: the repository's default branch is `master`,
+# and pinning this to `main` silently disabled the entire workflow.
 on:
   push:
-    branches: [main]
   pull_request:
+  workflow_dispatch:
 
 jobs:
   test:
